@@ -7,17 +7,7 @@ function App() {
 
   const [time, setTime] = useState("1");
   const [quotes, setQuotes] = useState()
-
-  useEffect(() => {
-    const fetchTime = async () => {
-      await axios.get("http://worldtimeapi.org/api/ip")
-        .then(response => {
-          console.log(response.data)
-          setTime(response.data.datetime)
-        })
-    }
-    fetchTime()
-  }, [])
+  
   useEffect(() => {
     const fetchQuotes = async () => {
       await axios.get("https://api.quotable.io/random?tags=technology&minLength=100&maxLength=180")
