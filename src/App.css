@@ -7,12 +7,14 @@
   background-size: cover;
   color: white;
   padding: 6rem 0;
+  padding-left: 8rem;
   overflow: hidden;
 }
 
 .quotes-div {
   color: white;
   display: flex;
+  align-items: center;
 }
 
 .refresh-icon {
@@ -21,17 +23,36 @@
   object-fit: cover;
   cursor: pointer;
 }
-.refresh-icon:hover{
+
+.refresh-icon:hover {
   color: white;
   background-color: white;
 }
-.additional-data{
+
+.additional-data {
   transition: .5s ease-in-out;
   background: rgba(255, 255, 255, .75);
   backdrop-filter: blur(20.3871px);
   height: 100vh;
 }
-.switch{
-  
-    
+
+.switch {}
+
+.quotes {
+  font-size: 1.8rem;
+  /* line-height: 2.8rem; */
+  width: 54rem;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.author {
+  text-align: left;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.time-div {
+  text-align: left;
+  text-transform: uppercase;
 }

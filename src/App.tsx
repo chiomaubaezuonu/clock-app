@@ -8,16 +8,30 @@ let dayOfWeek = ""
 let weekNum = ""
 let fetchQuotes: any;
 let author = ""
-let morning: string = "Good morning";
-let afternoon = "Good afternoon"
-let evening = "Good evening"
+
 function App() {
+
+  const backgroundImages = {
+    daytime: "./bg-daytime.jpg",
+    nighttime: "./bg-nighttime.jpg",
+  };
+
   const hour = new Date().getHours()
   const [time, setTime] = useState("");
   const [quotes, setQuotes] = useState(fetchQuotes)
   const [abbrev, setAbbrev] = useState("")
   const [timeZone, setTimezone] = useState("")
   const [more, setMore] = useState(false)
+  const [currentBgImage, setCurrentBgImage] = useState(backgroundImages.nighttime); 
+
+
+ useEffect(() => {
+  if (hour >= 6 && hour < 18) {
+    setCurrentBgImage(backgroundImages.daytime);
+  } else {
+    setCurrentBgImage(backgroundImages.nighttime);
+  }
+ }, [])
 
   useEffect(() => {
     fetchQuotes = async () => {
@@ -53,19 +67,19 @@ function App() {
   }, [])
   return (
     <div>
-      <div className="App">
+      <div className="App" style={{backgroundImage: currentBgImage}}>
         <div className="quotes-div">
-          <p>{quotes}</p>
+          <p className='quotes'>{quotes}</p>
           <img onClick={fetchQuotes} src={refresh} alt='refresh icon' className='refresh-icon' />
         </div>
-        <h2>{author}</h2>
+        <h2 className='author'>{author}</h2>
         <div className="time-div">
           <h2>  {hour >= 5 && hour < 12 ? "Good morning, the time is currently: " + time
             : hour >= 12 && hour < 17 ? "Good afternoon, the time is currently: " + time
               : hour >= 18 && hour < 22
                 ? "Good evening! the time is currently: " + time
-            : "Good night"
-      }
+                : "Good night"
+          }
           </h2>
           <p>{abbrev}</p>
           <p>{timeZone}</p>
