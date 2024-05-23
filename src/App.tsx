@@ -4,30 +4,33 @@ import axios from 'axios'
 import refresh from "./icon-refresh.svg"
 import { Switch } from 'antd';
 let timeOfYear = "";
-let dayOfWeek =""
+let dayOfWeek = ""
 let weekNum = ""
-let fetchQuotes:any;
+let fetchQuotes: any;
 let author = ""
-let greeting :string = ""
+let morning: string = "Good morning";
+let afternoon = "Good afternoon"
+let evening = "Good evening"
 function App() {
-
+  const hour = new Date().getHours()
   const [time, setTime] = useState("");
   const [quotes, setQuotes] = useState(fetchQuotes)
   const [abbrev, setAbbrev] = useState("")
   const [timeZone, setTimezone] = useState("")
   const [more, setMore] = useState(false)
 
-useEffect(() => {
- fetchQuotes = async () => {
+  useEffect(() => {
+    fetchQuotes = async () => {
       await axios.get("https://api.quotable.io/random?tags=technology&minLength=100&maxLength=180")
+
         .then(response => {
           setQuotes(response.data.content)
           author = response.data.author
         })
     }
-})
-    
-   
+  })
+
+
 
 
 
@@ -57,16 +60,23 @@ useEffect(() => {
         </div>
         <h2>{author}</h2>
         <div className="time-div">
-          <h1>{}Good Morning, It is currently: {time}</h1>
+          <h2>  {hour >= 5 && hour < 12 ? "Good morning, the time is currently: " + time
+            : hour >= 12 && hour < 17 ? "Good afternoon, the time is currently: " + time
+              : hour >= 18 && hour < 22
+                ? "Good evening! the time is currently: " + time
+            : "Good night"
+      }
+          </h2>
           <p>{abbrev}</p>
           <p>{timeZone}</p>
+
         </div>
 
         <Switch className='switch' checkedChildren="MORE" onChange={() => setMore(!more)} unCheckedChildren="LESS" />
       </div>
       {more &&
         <section className='additional-data'>
-          <div style={{display: 'flex', gap: 6}}>
+          <div style={{ display: 'flex', gap: 6 }}>
             <div>
               <h2>Current Timezone</h2>
               <p>{timeZone}</p>

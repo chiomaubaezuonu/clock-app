@@ -7,6 +7,7 @@
   background-size: cover;
   color: white;
   padding: 6rem 0;
+  overflow: hidden;
 }
 
 .quotes-div {
@@ -24,11 +25,13 @@
   color: white;
   background-color: white;
 }
-.aditional-data{
+.additional-data{
   transition: .5s ease-in-out;
+  background: rgba(255, 255, 255, .75);
+  backdrop-filter: blur(20.3871px);
+  height: 100vh;
 }
-Switch{
-  transform: rotate(180deg);
-    transition: .5s;
-    background-color: red;
+.switch{
+  
+    
 }
