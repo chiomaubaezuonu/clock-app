@@ -3,6 +3,8 @@ import './App.css';
 import axios from 'axios'
 import refresh from "./icon-refresh.svg"
 import { Switch } from 'antd';
+import moon from "./moon.svg"
+
 let timeOfYear = "";
 let dayOfWeek = ""
 let weekNum = ""
@@ -22,16 +24,16 @@ function App() {
   const [abbrev, setAbbrev] = useState("")
   const [timeZone, setTimezone] = useState("")
   const [more, setMore] = useState(false)
-  const [currentBgImage, setCurrentBgImage] = useState(backgroundImages.nighttime); 
+  const [currentBgImage, setCurrentBgImage] = useState(backgroundImages.nighttime);
 
 
- useEffect(() => {
-  if (hour >= 6 && hour < 18) {
-    setCurrentBgImage(backgroundImages.daytime);
-  } else {
-    setCurrentBgImage(backgroundImages.nighttime);
-  }
- }, [])
+  useEffect(() => {
+    if (hour >= 6 && hour < 18) {
+      setCurrentBgImage(backgroundImages.daytime);
+    } else {
+      setCurrentBgImage(backgroundImages.nighttime);
+    }
+  }, [])
 
   useEffect(() => {
     fetchQuotes = async () => {
@@ -67,22 +69,25 @@ function App() {
   }, [])
   return (
     <div>
-      <div className="App" style={{backgroundImage: currentBgImage}}>
+      <div className="App" style={{ backgroundImage: currentBgImage }}>
         <div className="quotes-div">
           <p className='quotes'>{quotes}</p>
           <img onClick={fetchQuotes} src={refresh} alt='refresh icon' className='refresh-icon' />
         </div>
         <h2 className='author'>{author}</h2>
         <div className="time-div">
-          <h2>  {hour >= 5 && hour < 12 ? "Good morning, the time is currently: " + time
-            : hour >= 12 && hour < 17 ? "Good afternoon, the time is currently: " + time
-              : hour >= 18 && hour < 22
-                ? "Good evening! the time is currently: " + time
-                : "Good night"
-          }
-          </h2>
-          <p>{abbrev}</p>
-          <p>{timeZone}</p>
+          <img src={moon} className='moon' alt='moon icon' />
+          <div>
+            <h2 className='time'>  {hour >= 1 && hour < 12 ? "Good morning, it is currently: " + time
+              : hour >= 12 && hour < 17 ? "Good afternoon, it is currently: " + time
+                : hour >= 18 && hour < 23
+                  ? "Good evening! it is currently: " + time
+                  : "Good morning, it is currently: " + time
+            }
+            </h2>
+            <p>{abbrev}</p>
+            <p>IN {timeZone}</p>
+          </div>
 
         </div>
 

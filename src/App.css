@@ -1,12 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  color: #fff;
+}
+
 .App {
   height: 100vh;
   text-align: center;
   background-image: url("./bg-nighttime.jpg");
-  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  padding: 6rem 0;
   padding-left: 8rem;
   overflow: hidden;
 }
@@ -14,7 +23,10 @@
 .quotes-div {
   color: white;
   display: flex;
-  align-items: center;
+  /* text-align: left; */
+  margin: 4rem 0 0 0;
+  width: 57.3rem;
+  gap: 6;
 }
 
 .refresh-icon {
@@ -39,9 +51,9 @@
 .switch {}
 
 .quotes {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   /* line-height: 2.8rem; */
-  width: 54rem;
+  width: 32.4rem;
   text-align: left;
   margin-bottom: 0;
 }
@@ -50,9 +62,43 @@
   text-align: left;
   font-size: 1.2rem;
   margin-top: 1rem;
+  margin-left: 8rem;
 }
 
 .time-div {
   text-align: left;
+  display: flex;
+  gap: 4;
+  background-color: blue;
   text-transform: uppercase;
+}
+
+.moon {
+  width: 1.7rem;
+  height: 1.7rem;
+  object-fit: cover;
+}
+.time{
+  font-size: 1.4rem;
+}
+
+@media (min-width: 768px) {
+
+  .App {
+    padding-left: 5rem;
+  }
+
+  .quotes-div .quotes {
+    margin: 0;
+    width: 34rem;
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+
+  .author {
+    margin-left: 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
 }
