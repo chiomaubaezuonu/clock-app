@@ -6,31 +6,35 @@ import { Switch } from 'antd';
 let timeOfYear = "";
 let dayOfWeek =""
 let weekNum = ""
+let fetchQuotes:any;
+let author = ""
+let greeting :string = ""
 function App() {
 
   const [time, setTime] = useState("");
-  const [quotes, setQuotes] = useState()
+  const [quotes, setQuotes] = useState(fetchQuotes)
   const [abbrev, setAbbrev] = useState("")
   const [timeZone, setTimezone] = useState("")
   const [more, setMore] = useState(false)
 
-  useEffect(() => {
-
-    const fetchQuotes = async () => {
+useEffect(() => {
+ fetchQuotes = async () => {
       await axios.get("https://api.quotable.io/random?tags=technology&minLength=100&maxLength=180")
         .then(response => {
           setQuotes(response.data.content)
+          author = response.data.author
         })
     }
-    fetchQuotes()
-  }, [])
+})
+    
+   
+
 
 
   useEffect(() => {
     const fetchTime = async () => {
       await axios.get("http://worldtimeapi.org/api/ip")
         .then(response => {
-          console.log(response.data)
           const currentTime = new Date(response.data.datetime).toLocaleTimeString()
           const abbreviation = response.data.abbreviation
           const tz = response.data.timezone
@@ -49,16 +53,16 @@ function App() {
       <div className="App">
         <div className="quotes-div">
           <p>{quotes}</p>
-          <img src={refresh} alt='refresh icon' className='refresh-icon' />
+          <img onClick={fetchQuotes} src={refresh} alt='refresh icon' className='refresh-icon' />
         </div>
-        <h2>{quotes}</h2>
+        <h2>{author}</h2>
         <div className="time-div">
-          <h1>It is currently: {time}</h1>
+          <h1>{}Good Morning, It is currently: {time}</h1>
           <p>{abbrev}</p>
           <p>{timeZone}</p>
         </div>
 
-        <Switch checkedChildren="MORE" onChange={() => setMore(!more)} unCheckedChildren="LESS" />
+        <Switch className='switch' checkedChildren="MORE" onChange={() => setMore(!more)} unCheckedChildren="LESS" />
       </div>
       {more &&
         <section className='additional-data'>
