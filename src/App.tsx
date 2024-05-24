@@ -87,7 +87,7 @@ function App() {
               : hour >= 12 && hour < 17 ? "Good afternoon"
                 : hour >= 6 && hour < 11
                   ? "Good evening"
-                  : "Good evening"
+                  : "Good morning"
             }
               <span>, it is currently:" </span>
             </h2>
@@ -100,27 +100,27 @@ function App() {
           <p className='timezone'>IN {timeZone}</p>
         </div>
 
-        <Switch className='switch' checkedChildren="MORE" onChange={() => setMore(!more)} unCheckedChildren="LESS" />
+        <Switch className={`switch ${more ? '' : 'background: 0.1rem solid #303030'}`} checkedChildren="MORE" onChange={() => setMore(!more)} unCheckedChildren="LESS" />
       </div>
       {more &&
-        <section className='additional-data'>
+        <section className='additional-data active'>
           <div className='dayOfYear'>
-            <div>
+            <div className='small'>
               <h2>Current Timezone</h2>
               <p>{timeZone}</p>
             </div>
-            <div>
+            <div className='small'>
               <h2>Day of the year</h2>
               <p>{timeOfYear}</p>
             </div>
           </div>
 
           <div className='week-div'>
-            <div>
+            <div className='small'>
               <h2>Day of week</h2>
               <p>{dayOfWeek}</p>
             </div>
-            <div>
+            <div className='small'>
               <h2>Week Number</h2>
               <p>{weekNum}</p>
             </div>

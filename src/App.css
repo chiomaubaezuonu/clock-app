@@ -214,7 +214,11 @@ h2 {
     padding-left: 1rem;
 
   }
-
+  /* .additional-data .active { */
+    /* Styles for the "expanded" state when more is true */
+    /* height: calc(100vh - 30vh); */
+    /* Adjust additional height as needed */
+  /* } */
   .quotes-div {
     margin-top: 1.8rem;
     width: 90%;
@@ -256,12 +260,11 @@ h2 {
   }
 
   .abbrev {
-    display: none;
-    /* font-size: 1.2rem;
+    font-size: 1.2rem;
     font-weight: 300;
     position: absolute;
     bottom: 0.1rem;
-    right: 3rem; */
+    right: 3rem;
   }
 
   .timezone {
@@ -270,14 +273,56 @@ h2 {
   }
 
   .switch {
-    /* position: absolute;
-    bottom: 2rem;
-    left: 1.7rem; */
-    display: none;
+    position: absolute;
+    bottom: 1rem;
+    left: 1.7rem;
+
   }
 
   .additional-data {
-    display: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: rgb(200, 198, 198);
+    width: 100%;
+    margin: 0;
+    padding: 3rem 3.5rem;
+    flex-direction: column;
+  }
+
+  .small {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    margin: 0.1rem 0;
+  }
+
+  .dayOfYear {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+
+  .dayOfYear h2 {
+    font-size: 0.7rem;
+  }
+
+  .dayOfYear p {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+  .week-div h2 {
+    font-size: 0.7rem;
+  }
+  .week-div p {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .week-div {
+    display: block;
+    text-align: left;
+    width: 100%;
   }
 }
 
@@ -286,7 +331,7 @@ h2 {
   .App {
     padding-left: 5rem;
   }
-
+  
   .quotes-div .quotes {
     width: 34rem;
     font-size: 1.3rem;
