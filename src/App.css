@@ -12,7 +12,7 @@ body {
 .App {
   height: 100vh;
   /* text-align: center; */
-  background-image: url("./bg-nighttime.jpg");
+  background-image: url("/public/images/bg-daytime.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -69,6 +69,7 @@ body {
   width: 60%;
   text-transform: uppercase;
   padding: 0rem;
+  margin: 4rem 0;
 }
 
 .moon {
@@ -115,43 +116,51 @@ body {
 }
 
 .switch {
-  /* margin-top: 4rem; */
-  width: 8rem;
+  width: 7rem;
   height: 3rem;
   object-fit: cover;
   padding: 0.8rem 0.2rem;
   font-size: 2rem;
- 
+  margin-top: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
 }
-button{
+
+button {
   display: flex;
 }
-.ant-switch.ant-switch-checked .ant-switch-inner .ant-switch-inner-checked , 
+
+.ant-switch.ant-switch-checked .ant-switch-inner .ant-switch-inner-checked,
 .ant-switch .ant-switch-inner .ant-switch-inner-unchecked {
   font-size: 1rem;
   padding: 0rem;
 }
+
 .ant-switch.ant-switch-checked .ant-switch-inner {
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* padding-right: 2rem; */
+  padding-left: 1rem;
 }
-.ant-switch .ant-switch-handle::before {
+
+.ant-switch .ant-switch-handle {
+  bottom: 0;
+  top: 1rem;
+}
+
+/* .ant-switch .ant-switch-handle::before {
   top: 1rem;
   bottom: 1rem;
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.05rem;
+  height: 1.05rem;
   object-fit: cover;
-  border-radius: 50%;
-}
-/* .ant-switch.ant-switch-checked {
-  background-color: red;
+  border-radius: 50%; 
+}*/
 
-}
-.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
-  background-color: red;
-} */
 @media (min-width: 768px) {
 
   .App {

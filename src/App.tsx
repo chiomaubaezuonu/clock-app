@@ -15,8 +15,9 @@ let initialQuote = "Imagination is more important than knowledge. For while know
 function App() {
 
   const backgroundImages = {
-    daytime: "./bg-daytime.jpg",
-    nighttime: "./bg-nighttime.jpg",
+    daytime: "images/bg-daytime.jpg",
+    nighttime: "../images/bg-nightime.jpg",
+  
   };
 
   const hour = new Date().getHours()
@@ -34,7 +35,7 @@ function App() {
     } else {
       setCurrentBgImage(backgroundImages.nighttime);
     }
-  }, [])
+  }, [hour])
 
   useEffect(() => {
     fetchQuotes = async () => {
