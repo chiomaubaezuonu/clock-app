@@ -71,6 +71,7 @@ function App() {
   }, [])
   return (
     <div>
+
       <div className="App" style={{ backgroundImage: currentBgImage }}>
         <div className="quotes-div">
           <p className='quotes'>{quotes}</p>
