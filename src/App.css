@@ -11,7 +11,7 @@ body {
 
 .App {
   height: 100vh;
-  text-align: center;
+  /* text-align: center; */
   background-image: url("./bg-nighttime.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -48,8 +48,6 @@ body {
   height: 100vh;
 }
 
-.switch {}
-
 .quotes {
   font-size: 1.2rem;
   /* line-height: 2.8rem; */
@@ -65,8 +63,7 @@ body {
   margin-left: 8rem;
 }
 
-.time-div {
-  background-color: green;
+.greeting-div {
   display: flex;
   align-items: center;
   width: 60%;
@@ -79,18 +76,82 @@ body {
   height: 1.7rem;
   object-fit: cover;
 }
-.greeting{
+
+.greeting {
   font-size: 1.2rem;
   font-weight: normal;
+  margin-top: 1rem;
 }
-.time{
+
+.time-div {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 70%;
+}
+
+.time {
   font-size: 8.938rem;
   display: block;
   text-align: left;
   font-weight: 700;
-  background-color: pink;
 }
 
+.abbrev {
+  font-size: 2rem;
+  font-weight: 300;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 03rem;
+
+}
+
+.timezone {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.switch {
+  /* margin-top: 4rem; */
+  width: 8rem;
+  height: 3rem;
+  object-fit: cover;
+  padding: 0.8rem 0.2rem;
+  font-size: 2rem;
+ 
+}
+button{
+  display: flex;
+}
+.ant-switch.ant-switch-checked .ant-switch-inner .ant-switch-inner-checked , 
+.ant-switch .ant-switch-inner .ant-switch-inner-unchecked {
+  font-size: 1rem;
+  padding: 0rem;
+}
+.ant-switch.ant-switch-checked .ant-switch-inner {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ant-switch .ant-switch-handle::before {
+  top: 1rem;
+  bottom: 1rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* .ant-switch.ant-switch-checked {
+  background-color: red;
+
+}
+.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
+  background-color: red;
+} */
 @media (min-width: 768px) {
 
   .App {

@@ -4,6 +4,7 @@ import axios from 'axios'
 import refresh from "./icon-refresh.svg"
 import { Switch } from 'antd';
 import moon from "./moon.svg"
+import sun from "./sun.svg"
 
 let timeOfYear = "";
 let dayOfWeek = ""
@@ -77,9 +78,9 @@ function App() {
         <h2 className='author'>{author}</h2>
         <div >
 
-          <div className="time-div">
+          <div className="greeting-div">
             {hour >= 10 && hour < 6 ? <img src={moon} className='moon' alt='moon icon' /> :
-              <img src={fetchQuotes} alt='refresh' />}
+              <img src={sun} alt='sun icon' />}
             <h2 className='greeting'>  {hour >= 1 && hour < 12 ? "Good morning, it is currently:"
               : hour >= 12 && hour < 17 ? "Good afternoon, it is currently:"
                 : hour >= 18 && hour < 23
@@ -88,9 +89,11 @@ function App() {
             }
             </h2>
           </div>
-          <p className='time'>{time}</p>
-          <p>{abbrev}</p>
-          <p>IN {timeZone}</p>
+          <div className='time-div'>
+            <p className='time'>{time}</p>
+            <p className='abbrev'>{abbrev}</p>
+          </div>
+          <p className='timezone'>IN {timeZone}</p>
         </div>
 
         <Switch className='switch' checkedChildren="MORE" onChange={() => setMore(!more)} unCheckedChildren="LESS" />
