@@ -54,7 +54,7 @@ function App() {
 
   useEffect(() => {
     const fetchTime = async () => {
-      await axios.get("http://worldtimeapi.org/api/ip")
+      await axios.get("https://worldtimeapi.org/api/ip")
         .then(response => {
           const currentTime = new Date(response.data.datetime).toLocaleTimeString()
           const abbreviation = response.data.abbreviation
