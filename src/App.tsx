@@ -10,7 +10,7 @@ let timeOfYear = "";
 let dayOfWeek = ""
 let weekNum = ""
 let fetchQuotes: any;
-let author = "Alan Watts"
+let author = ""
 let initialQuote = "Imagination is more important than knowledge. For while knowledge defines all we currently know and understand, imagination points to all we might yet discover and create."
 function App() {
 
@@ -36,10 +36,6 @@ function App() {
       setCurrentBgImage(backgroundImages.nighttime);
     }
   }, [hour])
-
-  if (more){
-
-  }
 
   useEffect(() => {
     fetchQuotes = async () => {
@@ -76,7 +72,7 @@ function App() {
   return (
     <div className='container'>
 
-      <div className="App active" style={{ backgroundImage: currentBgImage }}>
+      <div className={`App ${more ? 'active' : ''} `} style={{ backgroundImage: currentBgImage }}>
         <div className="quotes-div">
           <p className='quotes'>{quotes}</p>
           <img onClick={fetchQuotes} src={refresh} alt='refresh icon' className='refresh-icon' />
@@ -107,7 +103,7 @@ function App() {
         <Switch className='switch' checkedChildren="MORE" onChange={() => setMore(!more)} unCheckedChildren="LESS" />
       </div>
       {more &&
-        <section className='additional-data active'>
+        <section className='additional-data'>
           <div className='dayOfYear'>
             <div>
               <h2>Current Timezone</h2>
