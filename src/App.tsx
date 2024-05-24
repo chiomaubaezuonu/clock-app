@@ -83,13 +83,15 @@ function App() {
           <div className="greeting-div">
             {hour >= 10 && hour < 6 ? <img src={moon} className='moon' alt='moon icon' /> :
               <img src={sun} alt='sun icon' />}
-            <h2 className='greeting'>  {hour >= 1 && hour < 12 ? "Good morning, it is currently:"
-              : hour >= 12 && hour < 17 ? "Good afternoon, it is currently:"
+            <h2 className='greeting'>  {hour >= 1 && hour < 12 ? "Good morning"
+              : hour >= 12 && hour < 17 ? "Good afternoon"
                 : hour >= 18 && hour < 23
-                  ? "Good evening, it is currently:"
-                  : "Good morning, it is currently:"
+                  ? "Good evening"
+                  : "Good morning"
             }
+              <span>, it is currently:" </span> 
             </h2>
+          
           </div>
           <div className='time-div'>
             <p className='time'>{time}</p>

@@ -68,7 +68,7 @@ body {
   width: 60%;
   text-transform: uppercase;
   padding: 0rem;
-  margin: 4rem 0;
+  margin: 4rem 0 1rem 0;
   gap: 1.4rem;
 }
 
@@ -81,6 +81,7 @@ body {
 .greeting {
   font-size: 1.2rem;
   font-weight: normal;
+  letter-spacing: 0.3rem;
 }
 
 .time-div {
@@ -159,6 +160,63 @@ button {
   object-fit: cover;
   border-radius: 50%; 
 }*/
+
+@media (max-width: 600px) {
+  .App {
+    padding-left: 1rem;
+
+  }
+
+  .quotes-div {
+    margin-top: 1.8rem;
+    width: 90%;
+    gap: 1rem;
+  }
+
+  .quotes {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+  }
+
+  .refresh-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  .author{
+    margin: 0.5rem 0 0 0;
+    font-size: 0.8rem;
+  }
+  .greeting-div{
+    margin-top: 13.5rem;
+    width: 100%;
+  }
+  span{
+    display: none;
+  }
+  .time-div{
+    width: 100%;
+    gap: 1rem;
+  }
+  .time{
+    font-size: 3.2rem;
+  }
+  .abbrev{
+    font-size: 1.2rem;
+    font-weight: 300;
+    position: absolute;
+    bottom: 0.1rem;
+    right: 2rem;
+  }
+  .timezone{
+    margin-top: 3.1rem;
+    font-size: 1rem;
+  }
+  .switch{
+    position: absolute;
+    bottom: 2rem;
+    left: 1.7rem;
+  }
+}
 
 @media (min-width: 768px) {
 
