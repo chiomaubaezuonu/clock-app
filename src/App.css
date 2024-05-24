@@ -66,11 +66,12 @@ body {
 }
 
 .time-div {
-  text-align: left;
+  background-color: green;
   display: flex;
-  gap: 4;
-  background-color: blue;
+  align-items: center;
+  width: 60%;
   text-transform: uppercase;
+  padding: 0rem;
 }
 
 .moon {
@@ -78,8 +79,16 @@ body {
   height: 1.7rem;
   object-fit: cover;
 }
+.greeting{
+  font-size: 1.2rem;
+  font-weight: normal;
+}
 .time{
-  font-size: 1.4rem;
+  font-size: 8.938rem;
+  display: block;
+  text-align: left;
+  font-weight: 700;
+  background-color: pink;
 }
 
 @media (min-width: 768px) {
@@ -89,7 +98,6 @@ body {
   }
 
   .quotes-div .quotes {
-    margin: 0;
     width: 34rem;
     font-size: 1.3rem;
     line-height: 2rem;

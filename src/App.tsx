@@ -10,7 +10,7 @@ let dayOfWeek = ""
 let weekNum = ""
 let fetchQuotes: any;
 let author = ""
-
+let initialQuote = "Imagination is more important than knowledge. For while knowledge defines all we currently know and understand, imagination points to all we might yet discover and create."
 function App() {
 
   const backgroundImages = {
@@ -20,7 +20,7 @@ function App() {
 
   const hour = new Date().getHours()
   const [time, setTime] = useState("");
-  const [quotes, setQuotes] = useState(fetchQuotes)
+  const [quotes, setQuotes] = useState(initialQuote)
   const [abbrev, setAbbrev] = useState("")
   const [timeZone, setTimezone] = useState("")
   const [more, setMore] = useState(false)
@@ -75,20 +75,22 @@ function App() {
           <img onClick={fetchQuotes} src={refresh} alt='refresh icon' className='refresh-icon' />
         </div>
         <h2 className='author'>{author}</h2>
-        <div className="time-div">
-          <img src={moon} className='moon' alt='moon icon' />
-          <div>
-            <h2 className='time'>  {hour >= 1 && hour < 12 ? "Good morning, it is currently: " + time
-              : hour >= 12 && hour < 17 ? "Good afternoon, it is currently: " + time
+        <div >
+
+          <div className="time-div">
+            {hour >= 10 && hour < 6 ? <img src={moon} className='moon' alt='moon icon' /> :
+              <img src={fetchQuotes} alt='refresh' />}
+            <h2 className='greeting'>  {hour >= 1 && hour < 12 ? "Good morning, it is currently:"
+              : hour >= 12 && hour < 17 ? "Good afternoon, it is currently:"
                 : hour >= 18 && hour < 23
-                  ? "Good evening! it is currently: " + time
-                  : "Good morning, it is currently: " + time
+                  ? "Good evening, it is currently:"
+                  : "Good morning, it is currently:"
             }
             </h2>
-            <p>{abbrev}</p>
-            <p>IN {timeZone}</p>
           </div>
-
+          <p className='time'>{time}</p>
+          <p>{abbrev}</p>
+          <p>IN {timeZone}</p>
         </div>
 
         <Switch className='switch' checkedChildren="MORE" onChange={() => setMore(!more)} unCheckedChildren="LESS" />
