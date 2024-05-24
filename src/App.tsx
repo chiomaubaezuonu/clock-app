@@ -85,9 +85,9 @@ function App() {
               <img src={sun} alt='sun icon' />}
             <h2 className='greeting'>  {hour >= 1 && hour < 12 ? "Good morning"
               : hour >= 12 && hour < 17 ? "Good afternoon"
-                : hour >= 18 && hour < 23
+                : hour >= 6 && hour < 11
                   ? "Good evening"
-                  : "Good morning"
+                  : "Good evening"
             }
               <span>, it is currently:" </span>
             </h2>
