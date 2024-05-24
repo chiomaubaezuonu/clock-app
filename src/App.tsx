@@ -10,7 +10,7 @@ let timeOfYear = "";
 let dayOfWeek = ""
 let weekNum = ""
 let fetchQuotes: any;
-let author = ""
+let author = "Alan Watts"
 let initialQuote = "Imagination is more important than knowledge. For while knowledge defines all we currently know and understand, imagination points to all we might yet discover and create."
 function App() {
 
@@ -36,6 +36,10 @@ function App() {
       setCurrentBgImage(backgroundImages.nighttime);
     }
   }, [hour])
+
+  if (more){
+
+  }
 
   useEffect(() => {
     fetchQuotes = async () => {
@@ -70,9 +74,9 @@ function App() {
     fetchTime()
   }, [])
   return (
-    <div>
+    <div className='container'>
 
-      <div className="App" style={{ backgroundImage: currentBgImage }}>
+      <div className="App active" style={{ backgroundImage: currentBgImage }}>
         <div className="quotes-div">
           <p className='quotes'>{quotes}</p>
           <img onClick={fetchQuotes} src={refresh} alt='refresh icon' className='refresh-icon' />
@@ -89,9 +93,9 @@ function App() {
                   ? "Good evening"
                   : "Good morning"
             }
-              <span>, it is currently:" </span> 
+              <span>, it is currently:" </span>
             </h2>
-          
+
           </div>
           <div className='time-div'>
             <p className='time'>{time}</p>
@@ -103,24 +107,27 @@ function App() {
         <Switch className='switch' checkedChildren="MORE" onChange={() => setMore(!more)} unCheckedChildren="LESS" />
       </div>
       {more &&
-        <section className='additional-data'>
-          <div style={{ display: 'flex', gap: 6 }}>
+        <section className='additional-data active'>
+          <div className='dayOfYear'>
             <div>
               <h2>Current Timezone</h2>
               <p>{timeZone}</p>
             </div>
             <div>
-              <h2>Time of the year</h2>
+              <h2>Day of the year</h2>
               <p>{timeOfYear}</p>
             </div>
           </div>
-          <div>
-            <h2>Day of week</h2>
-            <p>{dayOfWeek}</p>
-          </div>
-          <div>
-            <h2>Week Number</h2>
-            <p>{weekNum}</p>
+
+          <div className='week-div'>
+            <div>
+              <h2>Day of week</h2>
+              <p>{dayOfWeek}</p>
+            </div>
+            <div>
+              <h2>Week Number</h2>
+              <p>{weekNum}</p>
+            </div>
           </div>
         </section>
 

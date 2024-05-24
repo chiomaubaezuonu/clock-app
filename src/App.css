@@ -11,13 +11,14 @@ body {
 
 .App {
   height: 100vh;
-  background-image: url("/public/images/bg-daytime.jpg");
+  background-image: url("/public/images/bg-nighttime.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  padding-left: 8rem;
+  padding-left: 15rem;
   overflow: hidden;
   box-shadow: inset 0 0 0 2000px #00000059;
+  transition: height 2s;
 }
 
 .quotes-div {
@@ -38,13 +39,6 @@ body {
 .refresh-icon:hover {
   color: white;
   background-color: white;
-}
-
-.additional-data {
-  transition: .5s ease-in-out;
-  background: rgba(255, 255, 255, .75);
-  backdrop-filter: blur(20.3871px);
-  height: 100vh;
 }
 
 .quotes {
@@ -82,6 +76,7 @@ body {
   font-size: 1.2rem;
   font-weight: normal;
   letter-spacing: 0.3rem;
+  margin-bottom: 0;
 }
 
 .time-div {
@@ -103,7 +98,7 @@ body {
   font-weight: 300;
   position: absolute;
   bottom: 1.5rem;
-  right: 03rem;
+  right: 0.1rem;
 
 }
 
@@ -152,6 +147,58 @@ button {
   top: 1rem;
 }
 
+.additional-data {
+  transition: .5s ease-in-out;
+  transition: top 0.5s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.482);
+  /* height: 65vh; */
+  padding: 5.2rem 8rem;
+  color: #303030;
+ 
+}
+.additional-data :active{
+  transition: height 5s;
+  height: 65vh;
+}
+
+.dayOfYear {
+  display: flex;
+  gap: 16.2rem;
+}
+
+.week-div {
+  display: flex;
+  gap: 34rem;
+}
+
+.dayOfYear,
+h2 {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  margin-bottom: .9rem;
+  /* color: #303030; */
+  margin-bottom: 2rem;
+}
+
+.dayOfYear p {
+  font-size: 3.8rem;
+  color: #303030;
+  font-weight: 700;
+}
+
+.week-div h2 {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  margin-bottom: .9rem;
+  color: #303030;
+  margin-bottom: 2rem;
+}
+
+.week-div p {
+  font-size: 3.8rem;
+  font-weight: 700;
+}
+
 /* .ant-switch .ant-switch-handle::before {
   top: 1rem;
   bottom: 1rem;
@@ -182,39 +229,53 @@ button {
     width: 2rem;
     height: 2rem;
   }
-  .author{
+
+  .author {
     margin: 0.5rem 0 0 0;
     font-size: 0.8rem;
   }
-  .greeting-div{
+
+  .greeting-div {
     margin-top: 13.5rem;
     width: 100%;
   }
-  span{
+
+  span {
     display: none;
   }
-  .time-div{
+
+  .time-div {
     width: 100%;
     gap: 1rem;
+  
   }
-  .time{
-    font-size: 3.2rem;
+
+  .time {
+    font-size: 2.7rem;
   }
-  .abbrev{
-    font-size: 1.2rem;
+
+  .abbrev {
+    display: none;
+    /* font-size: 1.2rem;
     font-weight: 300;
     position: absolute;
     bottom: 0.1rem;
-    right: 2rem;
+    right: 3rem; */
   }
-  .timezone{
-    margin-top: 3.1rem;
+
+  .timezone {
+    margin-top: 2rem 0;
     font-size: 1rem;
   }
-  .switch{
-    position: absolute;
+
+  .switch {
+    /* position: absolute;
     bottom: 2rem;
-    left: 1.7rem;
+    left: 1.7rem; */
+    display: none;
+  }
+  .additional-data{
+    display: none;
   }
 }
 
