@@ -70,9 +70,10 @@ body {
   text-transform: uppercase;
   padding: 0rem;
   margin: 4rem 0;
+  gap: 1.4rem;
 }
 
-.moon {
+.moon,.sun {
   width: 1.7rem;
   height: 1.7rem;
   object-fit: cover;
@@ -81,7 +82,6 @@ body {
 .greeting {
   font-size: 1.2rem;
   font-weight: normal;
-  margin-top: 1rem;
 }
 
 .time-div {

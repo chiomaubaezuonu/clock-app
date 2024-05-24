@@ -17,7 +17,7 @@ function App() {
   const backgroundImages = {
     daytime: "images/bg-daytime.jpg",
     nighttime: "../images/bg-nightime.jpg",
-  
+
   };
 
   const hour = new Date().getHours()
