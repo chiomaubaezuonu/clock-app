@@ -11,7 +11,7 @@ body {
 
 .App {
   height: 100vh;
-  background-image: url("/public/images/bg-nighttime.jpg");
+  background-image: url("/public/images/bg-daytime.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
