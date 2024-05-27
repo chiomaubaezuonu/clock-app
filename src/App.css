@@ -120,7 +120,7 @@ button {
   position: fixed;
 }
 
-.switch {
+/* .switch {
   width: 7rem;
   height: 3rem;
   object-fit: cover;
@@ -131,26 +131,17 @@ button {
   bottom: 5.9rem;
   right: 7rem;
 
-}
+} */
 
-.ant-switch.ant-switch-checked .ant-switch-inner .ant-switch-inner-checked,
-.ant-switch .ant-switch-inner .ant-switch-inner-unchecked {
-  font-size: 1rem;
-  padding: 0rem;
-}
-
-.ant-switch.ant-switch-checked .ant-switch-inner {
-  padding: 0;
+.more-switch {
   display: flex;
-  justify-content: center;
+  background-color: white;
+  width: 9rem;
+  height: 2.5rem;
+  padding: 1.7rem 1rem;
+  border-radius: 2.8rem;
   align-items: center;
-  /* padding-right: 2rem; */
-  padding-left: 1rem;
-}
-
-.ant-switch .ant-switch-handle {
-  bottom: 0;
-  top: 1rem;
+  justify-content: space-between;
 }
 
 .additional-data {
@@ -200,24 +191,45 @@ h2 {
   font-weight: 700;
 }
 
-/* .ant-switch .ant-switch-handle::before {
-  top: 1rem;
-  bottom: 1rem;
-  width: 1.05rem;
-  height: 1.05rem;
+.more-switch {
+  margin-top: 4rem;
+  position: absolute;
+  border: none;
+  right: 8rem;
+  bottom: 6rem;
+  cursor: pointer;
+ 
+}
+.arrow-div{
+  background-color: #303030;
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
   object-fit: cover;
-  border-radius: 50%; 
-}*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.downArrow {
+  width: 1rem;
+  margin: 0.8rem 0.8rem;
+  transition: transform 0.5s;
+}
+.rotate{
+  
+  rotate: 180deg;
+}
 
 @media (max-width: 600px) {
   .App {
     padding-left: 1rem;
 
   }
+
   /* .additional-data .active { */
-    /* Styles for the "expanded" state when more is true */
-    /* height: calc(100vh - 30vh); */
-    /* Adjust additional height as needed */
+  /* Styles for the "expanded" state when more is true */
+  /* height: calc(100vh - 30vh); */
+  /* Adjust additional height as needed */
   /* } */
   .quotes-div {
     margin-top: 1.8rem;
@@ -272,12 +284,7 @@ h2 {
     font-size: 1rem;
   }
 
-  .switch {
-    position: absolute;
-    bottom: 1rem;
-    left: 1.7rem;
 
-  }
 
   .additional-data {
     display: flex;
@@ -311,9 +318,11 @@ h2 {
     font-size: 1rem;
     letter-spacing: 0.1rem;
   }
+
   .week-div h2 {
     font-size: 0.7rem;
   }
+
   .week-div p {
     font-size: 1rem;
     letter-spacing: 0.1rem;
@@ -331,7 +340,7 @@ h2 {
   .App {
     padding-left: 5rem;
   }
-  
+
   .quotes-div .quotes {
     width: 34rem;
     font-size: 1.3rem;

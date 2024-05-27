@@ -5,6 +5,7 @@ import refresh from "./icon-refresh.svg"
 import { Switch } from 'antd';
 import moon from "./moon.svg"
 import sun from "./sun.svg"
+import arrowDown from "./down-arrow.svg"
 
 let timeOfYear = "";
 let dayOfWeek = ""
@@ -99,8 +100,15 @@ function App() {
           </div>
           <p className='timezone'>IN {timeZone}</p>
         </div>
+        <div className='more-switch'>
+          <p style={{ color: '#303030' }}>{`${more ? 'LESS' : 'MORE'}`}</p>
+          <div className='arrow-div'>
+            {/* <img src={arrowDown} className='downArrow' onClick={() => setMore(!more)} alt='down arrow' style={{ rotate: `${more ? '0' : '180deg'} transition: .5s;` }} /> */}
+            <img src={arrowDown} className={` ${more? 'rotate' : ''}`} onClick={() => setMore(!more)} alt='down arrow' />
+          </div>
 
-        <Switch className={`switch ${more ? '' : 'background: 0.1rem solid #303030'}`} checkedChildren="MORE" onChange={() => setMore(!more)} unCheckedChildren="LESS" />
+        </div>
+
       </div>
       {more &&
         <section className='additional-data active'>
