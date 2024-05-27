@@ -150,8 +150,9 @@ button {
 }
 
 .additional-data {
-  background-color: rgba(255, 255, 255, 0.482);
-  padding: 4rem 8rem;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 3rem 8rem;
+  margin-bottom: 2rem;
   color: #303030;
   height: 55vh;
   overflow: hidden;
