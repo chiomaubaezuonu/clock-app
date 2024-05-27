@@ -210,6 +210,13 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+.more-text{
+  letter-spacing: 0.26rem;
+  font-weight: 700;
+  font-size: 1rem;
+  opacity: .5;
+  color: #000;
+}
 .downArrow {
   width: 1rem;
   margin: 0.8rem 0.8rem;
@@ -253,7 +260,7 @@ h2 {
   }
 
   .greeting-div {
-    margin-top: 13.5rem;
+    margin-top: 7rem;
     width: 100%;
   }
 
@@ -285,6 +292,13 @@ h2 {
   }
 
 
+.more-switch{
+  bottom: 0;
+  left: 1rem;
+  right: 5rem;
+  bottom: 3rem;
+  padding: 1.4rem 0.7rem;
+}
 
   .additional-data {
     display: flex;
