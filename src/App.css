@@ -8,10 +8,15 @@ body {
   font-family: Inter, sans-serif;
   color: #fff;
 }
-
+.day{
+  background-image: url("/public/images/bg-daytime.jpg");
+}
+.night{
+  background-image: url("/public/images/bg-nighttime.jpg");
+}
 .App {
   height: 100vh;
-  background-image: url("/public/images/bg-daytime.jpg");
+  /* background-image: url("/public/images/bg-daytime.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
