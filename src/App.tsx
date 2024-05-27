@@ -88,7 +88,7 @@ function App() {
               : hour >= 12 && hour < 17 ? "Good afternoon"
                 : hour >= 6 && hour < 11
                   ? "Good evening"
-                  : "Good morning"
+                  : "Good evening"
             }
               <span>, it is currently:" </span>
             </h2>
