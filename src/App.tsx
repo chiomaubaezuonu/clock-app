@@ -71,7 +71,7 @@ function App() {
     fetchTime()
   }, [])
   return (
-    <div className={`${hour >= 5 ? "day": "night"}`}>
+    <div className={`${hour >= 5 ? "night": "day"}`}>
 
       <div className={`App ${more ? 'active' : ''} `} style={{ backgroundImage: currentBgImage }}>
         <div className="quotes-div">
