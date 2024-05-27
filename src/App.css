@@ -150,12 +150,13 @@ button {
 }
 
 .additional-data {
-  background-color: rgba(255, 255, 255, 1);
+  /* background-color: rgba(255, 255, 255, .95); */
   padding: 3rem 8rem;
   margin-bottom: 2rem;
   color: #303030;
   height: 55vh;
   overflow: hidden;
+  background-color: #c8c6c6;
 }
 
 

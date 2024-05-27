@@ -100,11 +100,11 @@ function App() {
           </div>
           <p className='timezone'>IN {timeZone}</p>
         </div>
-        <div className='more-switch'>
+        <div className='more-switch'  onClick={() => setMore(!more)}>
           <p className='more-text'>{`${more ? 'LESS' : 'MORE'}`}</p>
           <div className='arrow-div'>
             {/* <img src={arrowDown} className='downArrow' onClick={() => setMore(!more)} alt='down arrow' style={{ rotate: `${more ? '0' : '180deg'} transition: .5s;` }} /> */}
-            <img src={arrowDown} className={` ${more? 'rotate' : ''}`} onClick={() => setMore(!more)} alt='down arrow' />
+            <img src={arrowDown} className={` ${more? 'rotate' : ''}`} alt='down arrow' />
           </div>
 
         </div>
