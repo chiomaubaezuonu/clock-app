@@ -73,7 +73,7 @@ function App() {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const newTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}).replace('PM', "").replace('AM', "");
+      const newTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }).replace('PM', "").replace('AM', "");
       setTime(newTime);
     }, 1000); // Update time every second (1000 milliseconds)
 
@@ -81,9 +81,9 @@ function App() {
   }, []);
 
   return (
-    <div className={`${hour >= 5 ? "night": "day"}`}>
+    <div className={`container `}>
 
-      <div className={`App ${more ? 'active' : ''} `} style={{ backgroundImage: currentBgImage }}>
+      <div className={`App ${more ? 'active' : ''} ${hour >= 5 ? "day" : "night"} `} style={{ backgroundImage: currentBgImage }}>
         <div className="quotes-div">
           <p className='quotes'>{quotes}</p>
           <img onClick={fetchQuotes} src={refresh} alt='refresh icon' className='refresh-icon' />
@@ -110,11 +110,11 @@ function App() {
           </div>
           <p className='timezone'>IN {timeZone}</p>
         </div>
-        <div className='more-switch'  onClick={() => setMore(!more)}>
+        <div className='more-switch' onClick={() => setMore(!more)}>
           <p className='more-text'>{`${more ? 'LESS' : 'MORE'}`}</p>
           <div className='arrow-div'>
             {/* <img src={arrowDown} className='downArrow' onClick={() => setMore(!more)} alt='down arrow' style={{ rotate: `${more ? '0' : '180deg'} transition: .5s;` }} /> */}
-            <img src={arrowDown} className={` ${more? 'rotate' : ''}`} alt='down arrow' />
+            <img src={arrowDown} className={` ${more ? 'rotate' : ''}`} alt='down arrow' />
           </div>
 
         </div>

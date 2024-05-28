@@ -9,23 +9,28 @@ body {
   color: #fff;
 }
 
+.container {}
+
 .day {
   background-image: url("/public/images/bg-daytime.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .night {
   background-image: url("/public/images/bg-nighttime.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App {
   height: 100vh;
-  /* background-image: url("/public/images/bg-daytime.jpg"); */
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100%;
   color: white;
- 
   overflow: hidden;
   box-shadow: inset 0 0 0 2000px #00000059;
+  padding: 3.7rem 8.2rem;
   transition: height 3s;
 }
 
@@ -38,7 +43,7 @@ body {
 .quotes-div {
   color: white;
   display: flex;
-  margin: 4rem 0 0 0;
+  /* margin: 4rem 0 0 0; */
   width: 57.3rem;
   gap: 6;
 }
@@ -57,17 +62,17 @@ body {
 
 .quotes {
   font-size: 1.2rem;
-  /* line-height: 2.8rem; */
+  
   width: 32.4rem;
-  text-align: left;
-  margin-bottom: 0;
+  line-height: 1.8rem;
+  margin-bottom: 0.6rem;
 }
 
 .author {
   text-align: left;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  margin-left: 8rem;
+  font-size: 1.125rem;
+  margin-top: 0.813rem;
+  letter-spacing: 0.06rem;
 }
 
 .greeting-div {
@@ -76,7 +81,7 @@ body {
   width: 60%;
   text-transform: uppercase;
   padding: 0rem;
-  margin: 4rem 0 1rem 0;
+  margin: 5.7rem 0 1rem 0;
   gap: 1.4rem;
 }
 
@@ -97,7 +102,9 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  width: 49%;
+  width: 56%;
+  padding-top: 0;
+  margin-top: 0rem;
 }
 
 .time {
@@ -120,7 +127,7 @@ body {
 .timezone {
   font-weight: 700;
   font-size: 1.8rem;
-  margin-top: 1rem;
+  margin-top: 0.2rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
@@ -248,11 +255,6 @@ h2 {
 
   }
 
-  /* .additional-data .active { */
-  /* Styles for the "expanded" state when more is true */
-  /* height: calc(100vh - 30vh); */
-  /* Adjust additional height as needed */
-  /* } */
   .quotes-div {
     margin-top: 1.8rem;
     width: 90%;
@@ -370,7 +372,7 @@ h2 {
   }
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
 
   .App {
     padding-left: 5rem;
@@ -388,4 +390,4 @@ h2 {
     font-size: 1.1rem;
     margin-bottom: 0.6rem;
   }
-}
+} */
