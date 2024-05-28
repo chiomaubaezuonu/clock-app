@@ -70,6 +70,16 @@ function App() {
     }
     fetchTime()
   }, [])
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const newTime = new Date().toLocaleTimeString();
+      setTime(newTime);
+    }, 1000); // Update time every second (1000 milliseconds)
+
+    return () => clearInterval(intervalId); // Cleanup function to clear interval on unmount
+  }, []);
+
   return (
     <div className={`${hour >= 5 ? "night": "day"}`}>
 
