@@ -73,7 +73,7 @@ function App() {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const newTime = new Date().toLocaleTimeString();
+      const newTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}).replace('PM', "").replace('AM', "");
       setTime(newTime);
     }, 1000); // Update time every second (1000 milliseconds)
 
