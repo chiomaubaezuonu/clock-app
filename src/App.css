@@ -415,22 +415,53 @@ h2 {
 }
 
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
 
   .App {
-    padding-left: 5rem;
+    padding-left: 4rem;
+    padding-top: 5rem;
   }
-
+.quotes-div{
+  gap: 1rem;
+}
   .quotes-div .quotes {
     width: 34rem;
     font-size: 1.3rem;
     line-height: 2rem;
+   
   }
-
+.refresh-icon,.rotateIcon{
+  width: 2vw;
+  height: 2vw;
+}
   .author {
     margin-left: 0;
     font-weight: 700;
     font-size: 1.1rem;
     margin-bottom: 0.6rem;
+    color: white;
   }
-}  */
+  .greeting-div{
+    margin-top: 35rem;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .greeting{
+    color: white;
+    width: 100vw;
+  }
+  .time-div{
+    width: 100%;
+  }
+  .time{
+    margin: 0;
+    padding: 0;
+  }
+  .timezone{
+    font-size: 1.4rem;
+  }
+  .more-switch{
+    left: 4.1rem;
+    bottom: 2.5rem;
+  }
+} 
