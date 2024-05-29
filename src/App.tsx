@@ -90,7 +90,7 @@ function App() {
   return (
     <div className={`container `}>
 
-      <div className={`App ${more ? 'active' : ''} ${hour >= 5 ? "day" : "night"} `} style={{ backgroundImage: currentBgImage }}>
+      <div className={`App ${more ? 'active' : ''} ${hour >= 5 ? "night" : "day"} `} style={{ backgroundImage: currentBgImage }}>
         <div className="quotes-div">
           <p className='quotes'>{quotes}</p>
           <img onClick={handleRotateClick} src={refresh} alt='refresh icon' className={`${isRotated ? 'rotateIcon' : 'refresh-icon'}`} />
@@ -102,7 +102,7 @@ function App() {
         <div >
 
           <div className="greeting-div">
-            {hour >= 10 && hour < 6 ?
+            {hour >= 10 && hour > 6 ?
              <img src={moon} className='moon' alt='moon icon' /> :
               <img src={sun} alt='sun icon' />}
             <h2 className='greeting'>  {hour >= 1 && hour < 12 ? "Good morning"
