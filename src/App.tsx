@@ -111,7 +111,7 @@ function App() {
                   ? "Good evening"
                   : "Good evening"
             }
-              <span>, it is currently:" </span>
+              <span>, it is currently </span>
             </h2>
 
           </div>
