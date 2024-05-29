@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios'
-import refresh from "./icon-refresh.svg"
+import refresh from "./refresh .svg"
 import { Switch } from 'antd';
 import moon from "./moon.svg"
 import sun from "./sun.svg"
 import arrowDown from "./down-arrow.svg"
+import {SyncOutlined } from '@ant-design/icons';
 
 let timeOfYear = "";
 let dayOfWeek = ""
@@ -27,6 +28,7 @@ function App() {
   const [abbrev, setAbbrev] = useState("")
   const [timeZone, setTimezone] = useState("")
   const [more, setMore] = useState(false)
+  const [isRotated, setIsRotated] = useState(false)
   const [currentBgImage, setCurrentBgImage] = useState(backgroundImages.nighttime);
 
 
@@ -40,6 +42,7 @@ function App() {
 
   useEffect(() => {
     fetchQuotes = async () => {
+      setIsRotated(true)
       await axios.get("https://api.quotable.io/random?tags=technology&minLength=100&maxLength=180")
 
         .then(response => {
@@ -47,8 +50,11 @@ function App() {
           author = response.data.author
         })
     }
-  })
-
+  },)
+  const handleRotateClick = () => {
+    fetchQuotes(); // Call the fetch function
+    setIsRotated(!isRotated)
+  };
 
 
 
@@ -86,13 +92,17 @@ function App() {
       <div className={`App ${more ? 'active' : ''} ${hour >= 5 ? "day" : "night"} `} style={{ backgroundImage: currentBgImage }}>
         <div className="quotes-div">
           <p className='quotes'>{quotes}</p>
-          <img onClick={fetchQuotes} src={refresh} alt='refresh icon' className='refresh-icon' />
+          <img onClick={handleRotateClick} src={refresh} alt='refresh icon' className={`${isRotated ? 'rotateIcon' : 'refresh-icon'}`} />
+          {/* {
+            isRotated && <SyncOutlined spin  className='refresh' />
+          } */}
         </div>
         <h2 className='author'>{author}</h2>
         <div >
 
           <div className="greeting-div">
-            {hour >= 10 && hour < 6 ? <img src={moon} className='moon' alt='moon icon' /> :
+            {hour >= 10 && hour < 6 ?
+             <img src={moon} className='moon' alt='moon icon' /> :
               <img src={sun} alt='sun icon' />}
             <h2 className='greeting'>  {hour >= 1 && hour < 12 ? "Good morning"
               : hour >= 12 && hour < 17 ? "Good afternoon"

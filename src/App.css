@@ -49,20 +49,33 @@ body {
 }
 
 .refresh-icon {
-  width: 2vw;
-  height: 2vw;
+  width: 1.3vw;
+  height: 1.3vw;
   object-fit: cover;
   cursor: pointer;
+  color: gray;
 }
 
-.refresh-icon:hover {
+.rotateIcon {
+  width: 1.3vw;
+  height: 1.3vw;
+  object-fit: cover;
+  transition: .5s;
+  opacity: .5;
+  cursor: pointer;
+  color: gray;
+  rotate: 180deg;
+}
+
+
+.refresh-icon:hover, .rotateIcon {
+  
   color: white;
-  background-color: white;
 }
 
 .quotes {
   font-size: 1.2rem;
-  
+
   width: 32.4rem;
   line-height: 1.8rem;
   margin-bottom: 0.6rem;
