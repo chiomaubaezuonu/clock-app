@@ -7,14 +7,16 @@
 body {
   font-family: Inter, sans-serif;
   color: #fff;
+  background-color: #c8c6c6;
 }
 
 .container {
   /* Your other styles for the content container */
-  position: relative;
+  /* position: relative; */
   /* Required for transform animation to work */
-  animation: inherit;
+  /* animation: inherit; */
   /* Inherit animation from .App.active */
+
 }
 
 .day {
@@ -42,7 +44,7 @@ body {
 
 .App.active {
   /* Styles for the "expanded" state when more is true */
-  height: calc(100vh - 50vh);
+  height: calc(100vh - 65vh);
 
   /* Adjust additional height as needed */
 }
@@ -51,7 +53,7 @@ body {
   color: white;
   display: flex;
   /* margin: 4rem 0 0 0; */
-  width: 57.3rem;
+  width: 50%;
   gap: 6;
 }
 
@@ -183,24 +185,29 @@ button {
 
 .additional-data {
   /* background-color: rgba(255, 255, 255, .95); */
-  padding: 3rem 8rem;
+  padding: 4.5rem 8rem;
   margin-bottom: 2rem;
   color: #303030;
-  height: 50vh;
+  height: 100vh;
   overflow: hidden;
   background-color: #c8c6c6;
 }
-
-
-.dayOfYear {
-  display: flex;
-  gap: 16.2rem;
+.additional-data.active{
+  height: calc(100vh - 20vh);
+  
 }
 
-.week-div {
+.dayOfYear,.week-div {
   display: flex;
-  gap: 34rem;
+  width: 72.5%;
+  justify-content: space-between;
+  color: #303030;
+  /* gap: 16.2rem; */
 }
+
+/* .week-div {
+  display: flex;
+} */
 
 .dayOfYear,
 h2 {
@@ -235,6 +242,7 @@ h2 {
   font-size: 3.8rem;
   font-weight: 700;
 }
+
 
 .more-switch {
   margin-top: 4rem;
@@ -375,12 +383,16 @@ h2 {
     padding: 2.8rem 3.5rem;
     flex-direction: column;
   }
-
+.additional-data.active{
+  padding: 1.4rem 1rem;
+}
   .small {
     display: flex;
     gap: 2rem;
+    padding: 0.7rem;
     justify-content: space-between;
     margin: 0.1rem 0;
+    
   }
 
   .dayOfYear {
@@ -390,7 +402,7 @@ h2 {
   }
 
   .dayOfYear h2 {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 
   .dayOfYear p {
@@ -399,7 +411,8 @@ h2 {
   }
 
   .week-div h2 {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+    
   }
 
   .week-div p {
@@ -414,39 +427,45 @@ h2 {
   }
 }
 
-
+/* 
 @media (min-width: 768px) {
 
   .App {
     padding-left: 4rem;
     padding-top: 5rem;
   }
-.quotes-div{
-  gap: 1rem;
-}
+
+  .quotes-div {
+    gap: 1rem;
+  }
+
   .quotes-div .quotes {
     width: 34rem;
     font-size: 1.3rem;
     line-height: 2rem;
-   
+
   }
-.refresh-icon,.rotateIcon{
-  width: 2vw;
-  height: 2vw;
-}
+
+  .refresh-icon,
+  .rotateIcon {
+    width: 2vw;
+    height: 2vw;
+  }
+
   .author {
     margin-left: 0;
     font-weight: 700;
     font-size: 1.1rem;
     margin-bottom: 0.6rem;
     color: white;
-  }
-  .greeting-div{
+  } */
+
+  /* .greeting-div{
     margin-top: 35rem;
     width: 100%;
     margin-bottom: 0;
-  }
-  .greeting{
+  } */
+  /* .greeting{
     color: white;
     width: 100vw;
   }
@@ -459,9 +478,22 @@ h2 {
   }
   .timezone{
     font-size: 1.4rem;
-  }
-  .more-switch{
+  } */
+  /* .more-switch{
     left: 4.1rem;
     bottom: 2.5rem;
-  }
-} 
+  } 
+}*/
+
+/* @media(min-width: 2500px){
+
+ .time-div{
+  width: 28%;
+ }
+ .additional-data{
+  background-color: aquamarine;
+ }
+ .week-div{
+  gap: 41rem;
+ }
+} */
