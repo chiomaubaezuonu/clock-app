@@ -1,13 +1,88 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* html {
+    scroll-behavior: smooth;
+    font-size: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media (max-width: 1180px) {
+    html {
+        font-size: 92%;
+    }
 }
+
+@media (max-width: 1080px) {
+    html {
+        font-size: 84%;
+    }
+}
+
+@media (max-width: 980px) {
+    html {
+        font-size: 76%;
+    }
+}
+
+@media (max-width: 850px) {
+    html {
+      
+        font-size: 68%;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+    
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+       
+        font-size: 85%;
+    }
+}
+
+@media (min-width: 1500px) {
+    html {
+      
+        font-size: 150%;
+    }
+}
+
+@media (min-width: 1700px) {
+    html {
+        font-size: 95%;
+    }
+}
+
+
+@media (min-width: 2000px) {
+    html {
+        font-size: 115%;
+    }
+}
+
+@media (min-width: 2500px) {
+    html {
+        font-size: 180%;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:
+        "Montserrat",
+        segoe UI,
+        sans-serif;
+} */
+
+/* body {
+    font-size: 1.1rem;
+}
+
+svg {
+    fill: currentColor;
+} */
