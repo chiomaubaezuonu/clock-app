@@ -44,7 +44,7 @@ body {
 
 .App.active {
   /* Styles for the "expanded" state when more is true */
-  height: calc(100vh - 65vh);
+  height: calc(100vh - 58vh);
 
   /* Adjust additional height as needed */
 }
@@ -159,19 +159,6 @@ button {
   position: fixed;
 }
 
-/* .switch {
-  width: 7rem;
-  height: 3rem;
-  object-fit: cover;
-  padding: 0.8rem 0.2rem;
-  font-size: 2rem;
-  margin-top: 0;
-  position: absolute;
-  bottom: 5.9rem;
-  right: 7rem;
-
-} */
-
 .more-switch {
   display: flex;
   background-color: white;
@@ -186,18 +173,15 @@ button {
   background-color: rgba(30, 30, 30, 0.3);
 }
 .additional-data {
-  /* background-color: rgba(255, 255, 255, .95); */
   padding: 4.5rem 8rem;
   margin-bottom: 2rem;
   color: #303030;
-  height: 100vh;
+  height: 58vh;
   overflow: hidden;
-  background-color: #c8c6c6;
+  background-color: (255, 255, 255, .75);
+  font-family: Inter, sans-serif;
 }
-.additional-data.active{
-  height: calc(100vh - 20vh);
-  
-}
+
 
 .dayOfYear,.week-div {
   display: flex;
@@ -207,45 +191,29 @@ button {
   /* gap: 16.2rem; */
 }
 
-/* .week-div {
+
+.first-p{
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2.8rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  color: #303030;
+}
+.second-p{
+  font-size: 3.7rem;
+  line-height: 4.8rem;
+  font-weight: 700;
+}
+.small {
   display: flex;
-} */
-
-.dayOfYear,
-h2 {
-  font-size: 10px;
-  letter-spacing: 3px;
-  margin-bottom: .7rem;
-  color: #303030;
-  text-transform: uppercase;
-  font-size: 10px;
-  margin-bottom: 2rem;
-  opacity: .7;
+  flex-direction: column;
+  padding: 0.4rem;
+  justify-content: space-between;
+  margin: 0.1rem 0;
+  text-align: left;
+  
 }
-
-.dayOfYear p {
-  font-size: 3.8rem;
-  color: #303030;
-  font-weight: 700;
-
-}
-
-.week-div h2 {
-  text-transform: uppercase;
-  font-size: 10px;
-  letter-spacing: 3px;
-  margin-bottom: .9rem;
-  color: #303030;
-  margin-bottom: 2rem;
-  opacity: .7;
-}
-
-.week-div p {
-  font-size: 3.8rem;
-  font-weight: 700;
-}
-
-
 .more-switch {
   margin-top: 4rem;
   position: absolute;
@@ -375,22 +343,21 @@ h2 {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
-    background-color: rgb(200, 198, 198);
+    /* background-color: rgb(200, 198, 198); */
     width: 100%;
-    margin: 0;
-    padding: 2.8rem 3.5rem;
+    margin-top: 4rem;
+    padding: 0rem 0.5rem;
     flex-direction: column;
+    height: 30vh;
   }
-.additional-data.active{
-  padding: 1.4rem 1rem;
-}
+
   .small {
     display: flex;
-    gap: 2rem;
-    padding: 0.7rem;
+    width: 100%;
+    padding: 0rem 0.7rem;
     justify-content: space-between;
-    margin: 0.1rem 0;
-    
+    flex-direction: row;
+    margin: 0;
   }
 
   .dayOfYear {
@@ -399,25 +366,16 @@ h2 {
     margin-bottom: 0.8rem;
   }
 
-  .dayOfYear h2 {
-    font-size: 0.6rem;
-  }
-
-  .dayOfYear p {
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
-  }
-
-  .week-div h2 {
-    font-size: 0.6rem;
-    
-  }
-
-  .week-div p {
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
-  }
-
+.first-p{
+  font-size: 0.7rem;
+  color: rgba(30, 30, 30, 0.6);
+}
+.second-p{
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #303030;
+}
   .week-div {
     display: block;
     text-align: left;

@@ -135,23 +135,23 @@ function App() {
         <section className='additional-data active'>
           <div className='dayOfYear'>
             <div className='small'>
-              <h2>Current Timezone</h2>
-              <p>{timeZone}</p>
+              <p className='first-p'>Current Timezone</p>
+              <p className='second-p'>{timeZone}</p>
             </div>
             <div className='small'>
-              <h2>Day of the year</h2>
-              <p>{timeOfYear}</p>
+              <p className='first-p'>Day of the year</p>
+              <p className='second-p'>{timeOfYear}</p>
             </div>
           </div>
 
           <div className='week-div'>
             <div className='small'>
-              <h2>Day of week</h2>
-              <p>{dayOfWeek}</p>
+              <p className='first-p'>Day of week</p>
+              <p className='second-p'>{dayOfWeek}</p>
             </div>
-            <div className='small'>
-              <h2>Week Number</h2>
-              <p>{weekNum}</p>
+            <div className='small' style={{marginRight:'2rem'}}>
+              <p className='first-p'>Week Number</p>
+              <p className='second-p'>{weekNum}</p>
             </div>
           </div>
         </section>
