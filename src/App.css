@@ -182,7 +182,9 @@ button {
   align-items: center;
   justify-content: space-between;
 }
-
+.arrow-div:hover{
+  background-color: rgba(30, 30, 30, 0.3);
+}
 .additional-data {
   /* background-color: rgba(255, 255, 255, .95); */
   padding: 4.5rem 8rem;
