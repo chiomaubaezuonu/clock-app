@@ -3,7 +3,6 @@ import './App.css';
 import './index.css';
 import axios from 'axios'
 import refresh from "./refresh .svg"
-import { Switch } from 'antd';
 import moon from "./moon.svg"
 import sun from "./sun.svg"
 import arrowDown from "./down-arrow.svg"
@@ -30,16 +29,16 @@ function App() {
   const [timeZone, setTimezone] = useState("")
   const [more, setMore] = useState(false)
   const [isRotated, setIsRotated] = useState(false)
-  const [currentBgImage, setCurrentBgImage] = useState(backgroundImages.nighttime);
+  // const [currentBgImage, setCurrentBgImage] = useState(backgroundImages.nighttime);
 
 
-  useEffect(() => {
-    if (hour >= 6 && hour < 18) {
-      setCurrentBgImage(backgroundImages.daytime);
-    } else {
-      setCurrentBgImage(backgroundImages.nighttime);
-    }
-  }, [hour])
+  // useEffect(() => {
+  //   if (hour >= 6 && hour < 18) {
+  //     setCurrentBgImage(backgroundImages.daytime);
+  //   } else {
+  //     setCurrentBgImage(backgroundImages.nighttime);
+  //   }
+  // }, [hour])
 
   useEffect(() => {
     fetchQuotes = async () => {
@@ -86,11 +85,11 @@ function App() {
 
     return () => clearInterval(intervalId); // Cleanup function to clear interval on unmount
   }, []);
-
+  // style={{ backgroundImage: currentBgImage }}
   return (
     <div className={`container `}>
 
-      <div className={`App ${more ? 'active' : ''} ${hour >= 5 ? "night" : "day"} `} style={{ backgroundImage: currentBgImage }}>
+      <div className={`App ${more ? 'active' : ''} ${hour >= 5 ? "day" : "night" } `} >
         <div className="quotes-div">
           <p className='quotes'>{quotes}</p>
           <img onClick={handleRotateClick} src={refresh} alt='refresh icon' className={`${isRotated ? 'rotateIcon' : 'refresh-icon'}`} />
