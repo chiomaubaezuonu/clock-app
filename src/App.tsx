@@ -89,7 +89,7 @@ function App() {
   return (
     <div className={`container `}>
 
-      <div className={`App ${more ? 'active' : ''} ${hour >= 5 ? "day" : "night" } `} >
+      <div className={`App ${more ? 'active' : ''} ${hour >= 5 ? "night" : "day" } `} >
         <div className="quotes-div">
           <p className='quotes'>{quotes}</p>
           <img onClick={handleRotateClick} src={refresh} alt='refresh icon' className={`${isRotated ? 'rotateIcon' : 'refresh-icon'}`} />
