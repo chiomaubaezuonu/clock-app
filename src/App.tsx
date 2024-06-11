@@ -63,7 +63,7 @@ function App() {
     const fetchTime = async () => {
       await axios.get("https://worldtimeapi.org/api/ip")
         .then(response => {
-          const currentTime = new Date(response.data.datetime).toLocaleTimeString()
+          const currentTime = new Date(response.data.datetime).toLocaleTimeString( 'en-US', { hour12: false })
           const abbreviation = response.data.abbreviation
           const tz = response.data.timezone
           setTime(currentTime)
@@ -89,7 +89,7 @@ function App() {
   return (
     <div className={`container `}>
 
-      <div className={`App ${more ? 'active' : ''} ${hour >= 5 ? "night" : "day" } `} >
+      <div className={`App ${more ? 'active' : ''} ${hour >= 1 && hour <= 16 ? "day" : "night" } `} >
         <div className="quotes-div">
           <p className='quotes'>{quotes}</p>
           <img onClick={handleRotateClick} src={refresh} alt='refresh icon' className={`${isRotated ? 'rotateIcon' : 'refresh-icon'}`} />
