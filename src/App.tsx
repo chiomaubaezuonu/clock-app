@@ -6,7 +6,6 @@ import refresh from "./refresh .svg"
 import moon from "./moon.svg"
 import sun from "./sun.svg"
 import arrowDown from "./down-arrow.svg"
-import {SyncOutlined } from '@ant-design/icons';
 
 let timeOfYear = "";
 let dayOfWeek = ""
@@ -63,7 +62,7 @@ function App() {
     const fetchTime = async () => {
       await axios.get("https://worldtimeapi.org/api/ip")
         .then(response => {
-          const currentTime = new Date(response.data.datetime).toLocaleTimeString( 'en-US', { hour12: false })
+          const currentTime = new Date(response.data.datetime).toLocaleTimeString('en-US', { hour12: false })
           const abbreviation = response.data.abbreviation
           const tz = response.data.timezone
           setTime(currentTime)
@@ -87,9 +86,8 @@ function App() {
   }, []);
   // style={{ backgroundImage: currentBgImage }}
   return (
-    <div className={`container `}>
-
-      <div className={`App ${more ? 'active' : ''} ${hour >= 1 && hour <= 16 ? "day" : "night" } `} >
+    <div className='container'>
+      <div className={`App ${more ? 'active' : ''} ${hour >= 1 && hour <= 16 ? "day" : "night"} `} >
         <div className="quotes-div">
           <p className='quotes'>{quotes}</p>
           <img onClick={handleRotateClick} src={refresh} alt='refresh icon' className={`${isRotated ? 'rotateIcon' : 'refresh-icon'}`} />
@@ -102,7 +100,7 @@ function App() {
 
           <div className="greeting-div">
             {hour >= 10 && hour > 6 ?
-             <img src={moon} className='moon' alt='moon icon' /> :
+              <img src={moon} className='moon' alt='moon icon' /> :
               <img src={sun} alt='sun icon' />}
             <h2 className='greeting'>  {hour >= 1 && hour < 12 ? "Good morning"
               : hour >= 12 && hour < 17 ? "Good afternoon"
@@ -120,13 +118,13 @@ function App() {
           </div>
           <p className='timezone'>IN {timeZone}</p>
         </div>
+
+        {/* More switch */}
         <div className='more-switch' onClick={() => setMore(!more)}>
           <p className='more-text'>{`${more ? 'LESS' : 'MORE'}`}</p>
           <div className='arrow-div'>
-            {/* <img src={arrowDown} className='downArrow' onClick={() => setMore(!more)} alt='down arrow' style={{ rotate: `${more ? '0' : '180deg'} transition: .5s;` }} /> */}
             <img src={arrowDown} className={` ${more ? 'rotate' : ''}`} alt='down arrow' />
           </div>
-
         </div>
 
       </div>
@@ -148,7 +146,7 @@ function App() {
               <p className='first-p'>Day of week</p>
               <p className='second-p'>{dayOfWeek}</p>
             </div>
-            <div className='small' style={{marginRight:'2rem'}}>
+            <div className='small' style={{ marginRight: '2rem' }}>
               <p className='first-p'>Week Number</p>
               <p className='second-p'>{weekNum}</p>
             </div>
@@ -156,6 +154,7 @@ function App() {
         </section>
 
       }
+      
     </div>
   );
 }

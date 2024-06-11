@@ -10,14 +10,7 @@ body {
   background-color: #c8c6c6;
 }
 
-.container {
-  /* Your other styles for the content container */
-  /* position: relative; */
-  /* Required for transform animation to work */
-  /* animation: inherit; */
-  /* Inherit animation from .App.active */
 
-}
 
 .day {
   background-image: url("/public/images/bg-daytime.jpg");
@@ -32,6 +25,11 @@ body {
   background-size: cover;
 }
 
+.container {
+  /* background-color: pink; */
+  height: 100vh;
+}
+
 .App {
   height: 100vh;
   width: 100%;
@@ -39,14 +37,19 @@ body {
   overflow: hidden;
   box-shadow: inset 0 0 0 2000px #00000059;
   padding: 3.7rem 8.2rem;
-  transition: height 3s;
+  transition: .5s;
+  /* transition: height 5s; */
 }
 
 .App.active {
   /* Styles for the "expanded" state when more is true */
-  height: calc(100vh - 58vh);
-
+  /* height: calc(100vh - 58vh); */
   /* Adjust additional height as needed */
+  transform: translateY(-24.8rem);
+  height: 100vh;
+  transition: .5s;
+  /* moves the element upwards on y-axic */
+
 }
 
 .quotes-div {
@@ -169,21 +172,28 @@ button {
   align-items: center;
   justify-content: space-between;
 }
-.arrow-div:hover{
+
+.arrow-div:hover {
   background-color: rgba(30, 30, 30, 0.3);
 }
+
 .additional-data {
   padding: 4.5rem 8rem;
   margin-bottom: 2rem;
   color: #303030;
-  height: 58vh;
-  overflow: hidden;
+  height: 63.5vh;
   background-color: (255, 255, 255, .75);
   font-family: Inter, sans-serif;
+  /* transition: .5s; */
 }
 
+.additional-data.active {
+  transform: translateY(-25rem);
+  transition: .5s;
+}
 
-.dayOfYear,.week-div {
+.dayOfYear,
+.week-div {
   display: flex;
   width: 72.5%;
   justify-content: space-between;
@@ -192,7 +202,7 @@ button {
 }
 
 
-.first-p{
+.first-p {
   font-weight: 400;
   font-size: 1rem;
   line-height: 2.8rem;
@@ -200,11 +210,13 @@ button {
   text-transform: uppercase;
   color: #303030;
 }
-.second-p{
+
+.second-p {
   font-size: 3.7rem;
   line-height: 4.8rem;
   font-weight: 700;
 }
+
 .small {
   display: flex;
   flex-direction: column;
@@ -212,8 +224,9 @@ button {
   justify-content: space-between;
   margin: 0.1rem 0;
   text-align: left;
-  
+
 }
+
 .more-switch {
   margin-top: 4rem;
   position: absolute;
@@ -334,10 +347,11 @@ button {
     margin-top: 0rem;
     position: fixed;
   }
- .arrow-div{
-  padding: 0.8rem 0.6rem;
-  
- }
+
+  .arrow-div {
+    padding: 0.8rem 0.6rem;
+
+  }
 
   .additional-data {
     display: flex;
@@ -366,16 +380,18 @@ button {
     margin-bottom: 0.8rem;
   }
 
-.first-p{
-  font-size: 0.7rem;
-  color: rgba(30, 30, 30, 0.6);
-}
-.second-p{
-  font-weight: 700;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  color: #303030;
-}
+  .first-p {
+    font-size: 0.7rem;
+    color: rgba(30, 30, 30, 0.6);
+  }
+
+  .second-p {
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #303030;
+  }
+
   .week-div {
     display: block;
     text-align: left;
@@ -416,12 +432,12 @@ button {
     color: white;
   } */
 
-  /* .greeting-div{
+/* .greeting-div{
     margin-top: 35rem;
     width: 100%;
     margin-bottom: 0;
   } */
-  /* .greeting{
+/* .greeting{
     color: white;
     width: 100vw;
   }
@@ -435,7 +451,7 @@ button {
   .timezone{
     font-size: 1.4rem;
   } */
-  /* .more-switch{
+/* .more-switch{
     left: 4.1rem;
     bottom: 2.5rem;
   } 
