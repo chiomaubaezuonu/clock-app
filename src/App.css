@@ -231,6 +231,7 @@ button {
 .more-switch {
   margin-top: 4rem;
   position: absolute;
+  padding-right: 0.5rem;
   border: none;
   right: 8rem;
   bottom: 6rem;
