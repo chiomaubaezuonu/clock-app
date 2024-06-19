@@ -45,7 +45,8 @@ body {
   /* Styles for the "expanded" state when more is true */
   /* height: calc(100vh - 58vh); */
   /* Adjust additional height as needed */
-  transform: translateY(-24.8rem);
+  /* formerly -24.8rem */
+  transform: translateY(-20.8rem);
   height: 100vh;
   transition: .5s;
   /* moves the element upwards on y-axic */
@@ -189,7 +190,7 @@ button {
 }
 
 .additional-data.active {
-  transform: translateY(-25rem);
+  transform: translateY(-23rem);
   transition: .5s;
 }
 

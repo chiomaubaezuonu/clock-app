@@ -100,8 +100,8 @@ function App() {
 
           <div className="greeting-div">
             {hour >= 10 && hour > 6 ?
-              <img src={moon} className='moon' alt='moon icon' /> :
-              <img src={sun} alt='sun icon' />}
+              <img src={sun} className='moon' alt='moon icon' /> :
+              <img src={moon} alt='sun icon' />}
             <h2 className='greeting'>  {hour >= 1 && hour < 12 ? "Good morning"
               : hour >= 12 && hour < 17 ? "Good afternoon"
                 : hour >= 6 && hour < 11
